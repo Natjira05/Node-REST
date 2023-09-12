@@ -6,6 +6,7 @@ const db = new sqlite3.Database('./Database/Book.sqlite');
 
 app.use(express.json());
 
+//create books table if it doesn't exist
 db.run(`CREATE TABLE IF NOT EXISTS books (
     id INTEGER PRIMARY KEY,
     title TEXT,

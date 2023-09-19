@@ -1,6 +1,6 @@
 // Description: Node Express REST API with Sequelize and SQLite CRUD Book
-// npm install express sequelize sqlite}
-// Run this file with node SequlizeSQLiteCRUDBook. js
+// npm install express sequelize sqlite3
+// Run this file with node SequlizeSQLiteCRUDBook.js
 // Test with Postman
 
 const express = require('express');
@@ -38,8 +38,8 @@ const Book = sequelize.define('book', {
     sequelize.sync();
     
     // route to get all books
-app.get('/books', (req, res) =>{
-Book. findAll().then(books => {
+    app.get('/books', (req, res) =>{
+    Book. findAll().then(books => {
         res. json(books) ;
     }).catch(err => {
         res.status(500).send(err);
@@ -49,7 +49,7 @@ Book. findAll().then(books => {
 // route to get a book by id
 app.get('/books/:id', (req, res) => {
 Book.findByPk(req.params.id).then(book => {
-if (!book) {
+    if (!book) {
         res.status (404).send('Book not found');
     } else {
         res.json(book) ;
@@ -92,9 +92,9 @@ app.delete('/books/:id', (req, res) => {
         res.status(404).send('Book not found');
     } else {
     book.destroy().then(() => {
-        res.send({});screenY
+        res.send({});
     }).catch(err => {
-        res.status (500) .send(err);
+        res.status (500).send(err);
     });
     }
     }).catch(err => {

@@ -8,7 +8,7 @@ const Sequelize = require('sequelize');
 const app = express();
 
 // parse incoming requests
-app. use (express. json());
+app.use(express.json());
 
 // create a connection to the database
 const sequelize = new Sequelize('database', 'username', 'password', {
